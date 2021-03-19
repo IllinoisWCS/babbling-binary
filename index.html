@@ -39,10 +39,10 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">message to encode</span>
                         <input type="text" class="form-control" placeholder="Hi there!" aria-label="encode"
-                            aria-describedby="basic-addon1">
+                            aria-describedby="basic-addon1" id="encode-input">
                         <button class="btn btn-outline-secondary" type="button" id="encode-button">encode!</button>
                     </div>
-                    <p><output id="encode-output"></output></p>
+                    <p class="text-break"><output id="encode-output"></output></p>
                 </div>
             </div>
             <br>
@@ -53,14 +53,13 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">message to decode</span>
                         <input type="text" class="form-control" placeholder="00011000" aria-label="decode"
-                            aria-describedby="basic-addon1">
+                            aria-describedby="basic-addon1" id="decode-input">
                         <button class="btn btn-outline-secondary" type="button" id="decode-button">decode!</button>
                     </div>
-                    <p><output id="decode-output"></output></p>
+                    <p class="text-break"><output id="decode-output"></output></p>
                 </div>
             </div>
         </main>
     </div>
-    
     <script src="index.js"></script>
 </body>
