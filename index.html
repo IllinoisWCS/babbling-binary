@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Babbling Binary with Illinios WCS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel='icon' href='assets/favicon.ico' type='image/x-icon'/>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://www.illinoiswcs.org"><img alt="Illinois WCS MBTI Board"
+                    src="assets/logo.png" height=35></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main">
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <h1>babbling binary with illinois wcs</h1>
+                    <p>use this message decoder and encoder to send secret messages to your friends!</p>
+                </div>
+            </section>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">message encoder</h2>
+                    <p class="card-subtitle mb-2">write a super secret message for your friends!</p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">message to encode</span>
+                        <input type="text" class="form-control" placeholder="Hi there!" aria-label="encode"
+                            aria-describedby="basic-addon1">
+                        <button class="btn btn-outline-secondary" type="button" id="encode-button">encode!</button>
+                    </div>
+                    <p><output id="encode-output"></output></p>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">message decoder</h2>
+                    <p class="card-subtitle mb-2">find out what your friend sent you!</p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">message to decode</span>
+                        <input type="text" class="form-control" placeholder="00011000" aria-label="decode"
+                            aria-describedby="basic-addon1">
+                        <button class="btn btn-outline-secondary" type="button" id="decode-button">decode!</button>
+                    </div>
+                    <p><output id="decode-output"></output></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
