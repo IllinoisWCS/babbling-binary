@@ -30,7 +30,7 @@ document.getElementById("decode-button").addEventListener("click", function () {
     }
 
     for (var i = 0; i < message.length; i++) {
-        if (decoded_message[i] != 0 && decoded_message[i] != 1) {
+        if (message[i] != 0 && message[i] != 1) {
             document.getElementById("decode-output").innerHTML = "careful! your message contains characters that are not 0 or 1. i can't decode this.";
             return;
         }
@@ -44,4 +44,18 @@ document.getElementById("decode-button").addEventListener("click", function () {
     }
 
     document.getElementById("decode-output").innerHTML = decoded_message;
+});
+
+// references: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+document.getElementById("encode-input").addEventListener("keyup", function(event) {
+    if (event.code === "Enter") {
+        console.log('hey');
+        document.getElementById("encode-button").click();
+    }
+});
+
+document.getElementById("decode-input").addEventListener("keyup", function(event) {
+    if (event.code === "Enter") {
+        document.getElementById("decode-button").click();
+    }
 });
