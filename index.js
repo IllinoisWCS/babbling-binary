@@ -5,7 +5,7 @@ document.getElementById("encode-button").addEventListener("click", function () {
     // references: https://stackoverflow.com/questions/94037/convert-character-to-ascii-code-in-javascript
     for (var i = 0; i < message.length; i++) {
         if (message[i].charCodeAt(i) > 127) {
-            document.getElementById("encode-output").innerHTML = "sorry, we aren't able to handle non-ascii characters at this time. for an explanation on why, check out the background page!";
+            document.getElementById("encode-output").innerHTML = "sorry, we aren't able to handle non-ascii characters at this time.";
             return;
         }
     }
