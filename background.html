@@ -45,13 +45,115 @@
                 <div class="card-body">
                     <h2 class="card-title">what is binary?</h2>
                     <p>
-                        Like how in our daily lives, we use base 10 to represent our numbers, computers use base 2, also
-                        known as binary. For example, the number 123 to us is 100 + 20 + 3, or 1 * 10^2 + 2 * 10^1 + 3 * 10^0. 
-                        Binary works the same way. If we have some binary number 100, then this is 1 * 2^2 + 0 * 2^1 + 0 * 2^1. 
-                        To formalize this idea, we number the significance / place of the digits from right to left as 0, 1, 2, 
-                        and so on. Then, for each place, we multiply the value at that place by our base (whether that is 2 or 10) 
-                        to the power of it's significance number. So, the digit 1 in the 2nd significance place in binary would be 
-                        1 * 2 ^ 2 = 4. 
+                        In our daily lives, we use base 10 to represent numbers. This means that each digit of a number is 
+                        multiplied by a power of ten, and the digits in each place is between 0 and 9. An example is:
+                    </p>
+                    <p>
+                        123 = 1 * 10^2 + 2 * 10^1 + 3 * 10^0 = 100 + 20 + 3 = 123
+                    </p>
+                    <p>
+                        This is a very natural way of representing numbers for us, but this is not how computers represent 
+                        numbers! Instead, computers use base 2, so each digit of a number is multiplied by a power of 2 
+                        and the digits in each place is either 0 or 1. 
+                        An example is:
+                    </p>
+                    <p>
+                        101 = 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 4 + 0 + 1 = 5
+                    </p>
+                    <p>
+                        Do you notice a pattern in what power of 2 is being used in each place? Hint: if we number the places 
+                        from right to left, then the power of 2 that is the place number! Here's an example: 
+                    </p>
+                    <p>
+                        Consider the number 123 in base 10 (decimal). Then, the 1 is in the 2nd place, 2 is in the 1st place, 
+                        and 3 is in the 0th place. Computer scientists in general like counting from 0!
+                    </p>
+                    <p>
+                        In binary, consider the number 110. Then, the first 1 is in the 2nd place, the second 1 is in the 
+                        first place, and the 0 is in the 0th place. 
+                    </p>
+                    <p>
+                        Try it out! Consider the number 1010. What digit is in which place? 
+                    </p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">first 1</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="first_digit"
+                            aria-describedby="basic-addon1" id="first-input">
+                        <button class="btn btn-outline-secondary" type="button" id="first-check">check!</button>
+                    </div>
+                    <p><output id="first-output"></output></p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">first 0</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="second_digit"
+                            aria-describedby="basic-addon1" id="second-input">
+                        <button class="btn btn-outline-secondary" type="button" id="second-check">check!</button>
+                    </div>
+                    <p><output id="second-output"></output></p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">second 1</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="third_digit"
+                            aria-describedby="basic-addon1" id="third-input">
+                        <button class="btn btn-outline-secondary" type="button" id="third-check">check!</button>
+                    </div>
+                    <p><output id="third-output"></output></p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">second 0</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="fourth_digit"
+                            aria-describedby="basic-addon1" id="fourth-input">
+                        <button class="btn btn-outline-secondary" type="button" id="fourth-check">check!</button>
+                    </div>
+                    <p><output id="fourth-output"></output></p>
+                    <p>
+                        Now that we know how to identify the place numbers of binary numbers, let's try converting a 
+                        binary number to decimal! Feel free to use a four-function calculator, but don't use an 
+                        binary converter calculator!
+                    </p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">10010010</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="to_decimal"
+                            aria-describedby="basic-addon1" id="btd-input">
+                        <button class="btn btn-outline-secondary" type="button" id="btd-check">check!</button>
+                    </div>
+                    <p><output id="btd-output"></output></p>
+                    <p>
+                        Now, it's time for a challenge! Let's go the other way around. To do this, start from the 
+                        largest power of 2 that is less than or equal to your target number (we'll call this x), 
+                        subtract from your target, record the place of x and repeat. Here's an example of what to do:
+                    </p>
+                    <p>
+                        Convert the number 11 to binary:
+                    </p>
+                    <p>
+                        The largest power of 2 less than 11 is 8 = 2^3. So we put a 1 in the 3rd place, then subtract 8 
+                        from 11. We have 3 left over and our current result is 1 _ _ _, where _s denote numbers we don't 
+                        know yet.
+                    </p>
+                    <p>
+                        The largest power of 2 less than 3 is 2 = 2^1. So we put a 1 in the 1st place, then subtract 2 
+                        from 3. Since 2^2 = 4 is greater than 3, we put a 0 in the 2nd place. We have 1 left over and our 
+                        current result is 1 0 1 _. 
+                    </p>
+                    <p>
+                        The largest power of 2 less than or equal to 1 is 1 = 2^0. So, we put a 1 in the 0th place, then 
+                        subtract 1 from 1. We have 0 left over (so we're done!) and our final result is 1 0 1 1. You can 
+                        double check your work by converting 1010 to decimal, which is 1 * 2^3 + 0 * 2^2 + 1 * 2^1 + 1 * 
+                        2^0 = 8 + 2 + 1 = 11.
+                    </p>
+                    <p>
+                        Now it's your turn to try! Try converting the decimal number to binary:
+                    </p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">14</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="to_binary"
+                            aria-describedby="basic-addon1" id="dtb-input">
+                        <button class="btn btn-outline-secondary" type="button" id="dtb-check">check!</button>
+                    </div>
+                    <p><output id="dtb-output"></output></p>
+                    <p>
+                        Awesome job! Now you know what binary is and how to convert to and from decimal. This strategy also 
+                        generalizes to other bases (i.e. base 3 or base 16), but we won't go over this 
+                        here. As a general rule of thumb, if something is in base-N, then the digits in each place can go 
+                        up to N-1, and each digit is multiplied by a power of N. 
                     </p>
                 </div>
             </div>
@@ -91,5 +193,5 @@
             <br>
         </main>
     </div>
-    <script src="index.js"></script>
+    <script src="background.js"></script>
 </body>

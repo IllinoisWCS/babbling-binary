@@ -49,7 +49,6 @@ document.getElementById("decode-button").addEventListener("click", function () {
 // references: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 document.getElementById("encode-input").addEventListener("keyup", function(event) {
     if (event.code === "Enter") {
-        console.log('hey');
         document.getElementById("encode-button").click();
     }
 });
