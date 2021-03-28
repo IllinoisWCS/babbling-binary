@@ -123,3 +123,53 @@ document.getElementById("dtb-input").addEventListener("keyup", function(event) {
         document.getElementById("dtb-check").click();
     }
 });
+
+// -------------------------------------
+
+document.getElementById("atn-check").addEventListener("click", function() {
+    var user_input = parseInt(document.getElementById("atn-input").value);
+    var output = document.getElementById("atn-output");
+
+    if (user_input == 43) {
+        output.innerHTML = "Correct! Well done.";
+    } else if (user_input < 0 || user_input > 127) {
+        output.innerHTML = "Be careful! The number you inputted won't convert to a valid ASCII character.";
+    } else if (user_input > 31) {
+        output.innerHTML = "Incorrect. The number you inputted is the ASCII character " + String.fromCharCode(user_input) + ".";
+    } else {
+        output.innerHTML = "Incorrect. The number you inputted can't be outputted.";
+    }
+});
+
+document.getElementById("atn-input").addEventListener("keyup", function(event) {
+    if (event.code === "Enter") {
+        document.getElementById("atn-check").click();
+    }
+});
+
+// -------------------------------------
+
+document.getElementById("nta-check").addEventListener("click", function() {
+    var user_input = document.getElementById("nta-input").value;
+    var output = document.getElementById("nta-output");
+
+    var int_ver = user_input.charCodeAt(0);
+
+    if (user_input == "C") {
+        output.innerHTML = "Correct! Well done.";
+    } else if (user_input == "c") {
+        output.innerHTML = "Close! Remember that ASCII is case-sensitive";
+    } else if (user_input.length > 1 || user_input.length == 0) {
+        output.innerHTML = "Be careful! You inputted more than one letter.";
+    } else if (int_ver < 0 || int_ver > 127) {
+        output.innerHTML = "Be careful! The character you inputted doesn't seem to be an ASCII character.";
+    } else {
+        output.innerHTML = "Incorrect. The ASCII character you inputted is " + int_ver.toString();
+    }
+});
+
+document.getElementById("nta-input").addEventListener("keyup", function(event) {
+    if (event.code === "Enter") {
+        document.getElementById("nta-check").click();
+    }
+});
