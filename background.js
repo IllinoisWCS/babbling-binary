@@ -159,7 +159,7 @@ document.getElementById("nta-check").addEventListener("click", function() {
         output.innerHTML = "Correct! Well done.";
     } else if (user_input == "c") {
         output.innerHTML = "Close! Remember that ASCII is case-sensitive";
-    } else if (user_input.length > 1 || user_input.length == 0) {
+    } else if (user_input.length > 1 || user_input.length) {
         output.innerHTML = "Be careful! You inputted more than one letter.";
     } else if (int_ver < 0 || int_ver > 127) {
         output.innerHTML = "Be careful! The character you inputted doesn't seem to be an ASCII character.";
